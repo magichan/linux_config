@@ -1,0 +1,16 @@
+
+
+## 已转战 nvim ， 不再维护
+
+我的vim配置文件
+   前提： 安装有 
+            clang , gcc , make , vim 
+安装方法:  
+     0. 将自己的.vimrc 文件 备份
+     1.将vim 文件夹和 .vimrc 文件改变名字成 .vim 和 .vimrc
+     [如果改完之后找不到了，请按将 Ctrl 和 h 键一起按，显示隐藏文件 ]
+     2.将 两者赋值到 home 下
+     3.启动 vim
+
+使用方法：
+     见vimrc 的注释
