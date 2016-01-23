@@ -18,11 +18,12 @@ Plug 'scrooloose/syntastic',{'for':['c','cpp','cc']}
 " 语法检测
 
 
-
 Plug 'StanAngeloff/php.vim',{'for':'php'}
 Plug 'shawncplus/phpcomplete.vim',{'for':'php'}
 
-
+Plug 'fatih/vim-go',{'for':'go'}
+Plug 'Shougo/neocomplete',{'for':'go'}
+"Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 
 call plug#end()
 
@@ -63,12 +64,18 @@ set wildmenu                     "补全命令
 
 set scrolloff=4                  " 光标移动到buffer的顶部和底部时保持3行距离,再往下移动页面时，光标与最后一行始终保持4格的距
 " 
+
+
+"{ 系统粘贴设置  尽针对 nvim
+set clipboard+=unnamedplus
+"}
+
 "{ clang 配置
 let g:clang_cpp_options = '-std=c++11 -lpthread '
 "}
 
 
-"{设置超级TAB的补全
+"{ 设置超级TAB的补全
 "let g:SuperTabRetainCompletionType=0
 "let g:SuperTabDefaultCompletionType="<C-X><C-U>"
 "}
