@@ -23,9 +23,10 @@ Plug 'scrooloose/syntastic',{'for':['c','cpp','cc','php']}
 "Plug 'Shougo/unite.vim',{'for':'php'}
 "Plug 'm2mdas/phpcomplete-extended-laravel',{'for':'php'}
 "Plug 'm2mdas/phpcomplete-extended',{'for':'php'}
-"Plug 'StanAngeloff/php.vim',{'for':'php'}
+Plug 'StanAngeloff/php.vim',{'for':'php'}
 "Plug 'shawncplus/phpcomplete.vim',{'for':'php'}
 Plug 'phpvim/phpcd.vim',{'for':'php'}
+Plug 'mkusher/padawan.vim'
 Plug 'vim-scripts/progressbar-widget' " 用来显示索引进度的插件
 
 Plug 'fatih/vim-go',{'for':'go'}
@@ -41,10 +42,10 @@ set visualbell
 set background=dark
 
 set expandtab shiftwidth=2 softtabstop=2
-autocmd Filetype python setlocal shiftwidth=4 softtabstop=4
 
 
 "{ 基本配置 
+filetype on                   " 打开文件检测功能
 set autoindent                " 设置自动对齐(缩进)
 set smartindent                    " 智能对齐方式
 set wrap              " 自动换行
@@ -90,14 +91,48 @@ autocmd FileType php setlocal omnifunc=phpcd#CompletePHP
 " 使用方法
 "     在 composer 管理的 应用根目录下 , composer update ，好像加载什么缓存
 "      再打开 neovim 利用 索引进度插件，可以看到进度，完成后使用
-} 
+"} 
+"{ Padawan.vim 
+" let $PATH=$PATH . ':' . expand('~/.composer/vendor/bin')
+" let g:padawan#composer_command = "php /usr/local/bin/composer"
+"}
+
+"{ spell 自动单词检验 
+" 使用提示 
+" ]s 跳到下个出错位置
+" [s 跳刀上个出错位置
+" z= 进行修改
+" zg 加入个人单词表
+" zw 从个人单词中删除
+" set spell   "开启语法检测 
+" set spelllang=en  " 只对英语进行拼写检查
+ autocmd FileType tex setlocal spell spelllang=en
+ autocmd FileType markdown set spell spelllang=en,cjk " 根据文件类型 md 执行 set spell 和 set spelllang=en 命令
+ 
+"{
+highlight clear SpellBad
+highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
+highlight clear SpellCap
+highlight SpellCap term=underline cterm=underline
+highlight clear SpellRare
+highlight SpellRare term=underline cterm=underline
+highlight clear SpellLocal
+highlight SpellLocal term=underline cterm=underline
+"} 修改配色，以下滑线的方式列出错误
+"}
+
 "{ clang 配置
 let g:clang_cpp_options = '-std=c++11 -lpthread '
 "}
 
-"{ 设置超级TAB的补全
-"let g:SuperTabRetainCompletionType=0
-let g:SuperTabDefaultCompletionType="<C-X><C-O>"
+"{ 补全建设置 
+"let g:SuperTabRetainCompletionType=0 "是否记忆上次补全 
+"let g:SuperTabDefaultCompletionType="<C-X><C-O>" 默认补全，初始值为 P 
+inoremap <C-O>             <C-X><C-O>
+inoremap <C-P>             <C-X><C-P>
+inoremap <C-F>             <C-X><C-F>
+inoremap <C-D>             <C-X><C-D>
+inoremap <C-L>             <C-X><C-L> 
 "}
 
 
@@ -120,10 +155,10 @@ nmap wm :WMToggle<CR>
 inoremap <C-F>  <C-X><C-D>
 cnoremap Q! q!
 cnoremap Q1 q!
-"command  Q  q
-"command  Wq wq
-"command  WQ wq
-"command  W  w
+command  Q  q
+command  Wq wq
+command  WQ wq
+command  W  w
 
 "}
 
