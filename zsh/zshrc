@@ -82,4 +82,10 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias n="nvim"
-alias proxy="proxychains4 -f ~/.config/shadowsocks/ss.json "
+alias proxy="proxychains4"  
+alias pandoc_github="pandoc -c ~/.config/pandoc/github-pandoc.css"
+
+# ssh login 
+alias ssh_ubunut="ssh ubuntu@192.168.1.150"
+
+alias tmux="tmux -2"
