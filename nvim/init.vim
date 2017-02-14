@@ -19,7 +19,7 @@ Plug 'tpope/vim-commentary'
 " 简洁代码注释  gc 操作
 
 Plug 'StanAngeloff/php.vim',{'for':'php'}
-Plug 'shawncplus/phpcomplete.vim'
+"Plug 'shawncplus/phpcomplete.vim'
 
 " Markdown 
 Plug 'godlygeek/tabular'
