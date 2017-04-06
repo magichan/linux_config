@@ -87,5 +87,7 @@ alias pandoc_github="pandoc -c ~/.config/pandoc/github-pandoc.css"
 
 # ssh login 
 alias ssh_ubunut="ssh ubuntu@192.168.1.150"
+alias qshell_upload="qshell qupload ~/.qshell/upload.json"
 
 alias tmux="tmux -2"
+alias pdfreader="evince"

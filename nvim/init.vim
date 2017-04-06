@@ -6,6 +6,7 @@ Plug 'tomasr/molokai'
 Plug 'justmao945/vim-clang',{'for':['c','cpp','cc']}
 Plug 'supertab'
 Plug 'scrooloose/syntastic',{'for':['c','cpp','cc']}
+Plug 'lervag/vimtex',{'for':['tex']}
 " 语法检测
 Plug 'vim-airline/vim-airline'
 " 底栏
@@ -19,7 +20,7 @@ Plug 'tpope/vim-commentary'
 " 简洁代码注释  gc 操作
 
 Plug 'StanAngeloff/php.vim',{'for':'php'}
-"Plug 'shawncplus/phpcomplete.vim'
+Plug 'shawncplus/phpcomplete.vim'
 
 " Markdown 
 Plug 'godlygeek/tabular'
